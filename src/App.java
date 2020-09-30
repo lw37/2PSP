@@ -102,7 +102,7 @@ public class App {
     }
 
 
-    public void Ae18() throws InterruptedException {
+    public void Ae18() {
         long inicio = System.currentTimeMillis();
 
         Scanner reader = new Scanner(System.in);
