@@ -1,67 +1,39 @@
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.LinkedList;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class MemberCreator implements Runnable {
-    String fileName="emailMembers.txt";
+    private  LinkedList<String> correos=new LinkedList<String>();
+    Lock lock=new ReentrantLock();
 
-    @Override
-    public void run() {
-        try {
-            start();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private synchronized void start() throws IOException, InterruptedException {
-            System.out.println("MemberCeartor Started");
-            File file = new File(fileName);
-            FileWriter writer = new FileWriter(file);
-            PrintWriter printer = new PrintWriter(writer);
-
-            int correos = 10000;
-
-            for (int i = 0; i < 100; i++)
-             {
-                correos++;
-                printer.println(correos + "@qq.com");
-
-            }
-            printer.close();
-
-        }
-
-
-    }
-
-
-/*import java.util.LinkedList;
-
-public class MemberCreator implements Runnable {
-    private static LinkedList<String> correos=new LinkedList<String>();
-    private int num=1;
     @Override
     public synchronized void run() {
+        System.out.println("MemberCreator Started");
 
-
-            for (int i = 0; i < 3; i++) {
-
-                correos.add(i+"@qq.com");
+        for (int i = 1; i < 100; i++) {
+            try {
+                Thread.sleep(4000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
-
-
+            correos.add(i+"@qq.com");
+            System.out.println("Creado user: "+i+"@qq.com");
         }
 
-    public  LinkedList<String> Correos(){
+
+    }
+
+    public LinkedList<String> Correo(){
         return correos;
     }
+
+    public void Informar(){
+        for (String line : correos) {
+            System.out.println("Estimado "+line+", usuario "+correos.getLast()+"ha unido a nuestro grupo.");
+        }
+    }
+
 
 
 
 }
-*/

@@ -8,18 +8,14 @@ public class MenberMonitor {
     public static void main(String[] args) throws IOException, InterruptedException {
         System.out.println("System started");
         MemberCreator memberCreator=new MemberCreator();
+        MailSender mailSender= new MailSender(memberCreator);
         Thread memberThread =new Thread(memberCreator);
-
-        MailSender mailSender= new MailSender();
         Thread mailSenderThread1=new Thread(mailSender);
-        ///Thread mailSenderThread2=new Thread(mailSender);
-        ///Thread mailSenderThread3=new Thread(mailSender);
+
         memberThread.start();
-        memberThread.join();
         mailSenderThread1.start();
+        memberThread.join();
         mailSenderThread1.join();;
-
     }
-
 }
 
