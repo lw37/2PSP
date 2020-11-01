@@ -19,7 +19,7 @@ public class MemberCreator implements Runnable {
     }
 
     private synchronized void start() throws IOException, InterruptedException {
-
+            System.out.println("MemberCeartor Started");
             File file = new File(fileName);
             FileWriter writer = new FileWriter(file);
             PrintWriter printer = new PrintWriter(writer);

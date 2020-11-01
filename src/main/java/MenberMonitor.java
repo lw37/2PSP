@@ -6,6 +6,7 @@ import java.util.TreeMap;
 
 public class MenberMonitor {
     public static void main(String[] args) throws IOException, InterruptedException {
+        System.out.println("System started");
         MemberCreator memberCreator=new MemberCreator();
         Thread memberThread =new Thread(memberCreator);
 
