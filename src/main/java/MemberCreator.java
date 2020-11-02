@@ -10,7 +10,7 @@ public class MemberCreator implements Runnable {
     public synchronized void run() {
         System.out.println("MemberCreator Started");
 
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i < 1000000000; i++) {
             try {
                 Thread.sleep(4000);
             } catch (InterruptedException e) {
@@ -20,20 +20,17 @@ public class MemberCreator implements Runnable {
             System.out.println("Creado user: "+i+"@qq.com");
         }
 
-
     }
 
     public LinkedList<String> Correo(){
         return correos;
     }
 
-    public void Informar(){
-        for (String line : correos) {
-            System.out.println("Estimado "+line+", usuario "+correos.getLast()+"ha unido a nuestro grupo.");
-        }
+
+
+    public void Informar(int num){
+        lock.lock();
+            System.out.println("Estimado "+correos.get(num)+", usuario "+correos.getLast()+" ha unido a nuestro grupo.");
+        lock.unlock();
     }
-
-
-
-
 }

@@ -12,10 +12,12 @@ public class MenberMonitor {
         Thread memberThread =new Thread(memberCreator);
         Thread mailSenderThread1=new Thread(mailSender);
 
+        memberThread.setPriority(Thread.MIN_PRIORITY);
         memberThread.start();
         mailSenderThread1.start();
         memberThread.join();
         mailSenderThread1.join();;
+
     }
 }
 
