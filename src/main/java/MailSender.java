@@ -8,7 +8,7 @@ public class MailSender implements Runnable{
     public MailSender(MemberCreator member){
         this.member=member;
     }
-    public static int num=0;
+
     Lock lock=new ReentrantLock();
     @Override
     public  void run() {
@@ -20,19 +20,20 @@ public class MailSender implements Runnable{
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            lock.lock();
-            for (int i = 0; i < this.member.Correo().size() ; i++) {
-                try {
-                    Thread.sleep(500);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                if(longitud!=this.member.Correo().size()){
-                    this.member.Informar(i);
-                }
-            }
-            lock.unlock();
+
         }
     }
 
+    public void Sender(int num) {
+        lock.lock();
+        if(longitud!=this.member.Correo().size()){
+            this.member.Informar(num);
+        }
+        lock.unlock();
+    }
+
+
+    public int getLongitud() {
+        return longitud;
+    }
 }

@@ -9,12 +9,17 @@ public class MenberMonitor {
         System.out.println("System started");
         MemberCreator memberCreator=new MemberCreator();
         MailSender mailSender= new MailSender(memberCreator);
+        Increaser increaser=new Increaser(mailSender);
         Thread memberThread =new Thread(memberCreator);
+        Thread increaserThread=new Thread(mailSender);
         Thread mailSenderThread1=new Thread(mailSender);
 
-        memberThread.setPriority(Thread.MIN_PRIORITY);
+        memberThread.setPriority(Thread.MAX_PRIORITY);
         memberThread.start();
+        increaserThread.start();
+
         mailSenderThread1.start();
+        increaserThread.join();
         memberThread.join();
         mailSenderThread1.join();;
 
