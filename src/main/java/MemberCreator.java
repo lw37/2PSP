@@ -9,7 +9,6 @@ import java.util.concurrent.locks.ReentrantLock;
 public class MemberCreator implements Runnable {
     private  LinkedList<String> correos=new LinkedList<String>();
     Lock lock=new ReentrantLock();
-
     @Override
     public synchronized void run() {
         System.out.println("MemberCreator Started");
@@ -27,7 +26,7 @@ public class MemberCreator implements Runnable {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            printer.println(i+"@qq.com ");
+            printer.println(i+"@qq.com");
             printer.flush();
             correos.add(i+"@qq.com");
             System.out.println("Creado user: "+i+"@qq.com");

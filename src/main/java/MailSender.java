@@ -8,7 +8,6 @@ public class MailSender implements Runnable{
     public MailSender(MemberCreator member){
         this.member=member;
     }
-    public static int num=0;
     Lock lock=new ReentrantLock();
     @Override
     public  void run() {
