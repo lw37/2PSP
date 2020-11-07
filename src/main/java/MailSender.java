@@ -1,54 +1,21 @@
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+
 public class MailSender {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         System.out.println("MAILSENDER START");
-        System.out.println(args+"MAILSENDER RUN");
-
-    }
-
-    /*
-    public MailSender(String lastUser, String user)
-    {
-        this.lastUser = lastUser;
-        this.user = user;
-    }
-
-    @Override
-    public void run() {
-        try {
-            Thread.sleep(500);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+        System.out.println(args + "MAILSENDER RUN");
+        FileReader reader = new FileReader("correos.txt");
+        BufferedReader bReader = new BufferedReader(reader);
+        String user;
+        while ((user = bReader.readLine()) != null) {
+            Thread envioThread=new Thread(new Enviar(user,args));
         }
-        System.out.println("Estimado "+user+", usuario "+lastUser+" ha unido a nuestro grupo.");
+
+
     }
-/*
-    private final MemberCreator member;
-    private int longitud;
-    public MailSender(MemberCreator member){
-        this.member=member;
-    }
-    @Override
-    public  void run() {
-        System.out.println("MailSender Started");
-        while (true){
-             longitud= this.member.Correo().size();
-            try {
-                Thread.sleep(3000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            for (int i = 0; i < this.member.Correo().size() ; i++) {
-                try {
-                    Thread.sleep(500);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                if(longitud!=this.member.Correo().size()){
-                    this.member.Informar(i);
-                }
-            }
-        }
-    }
-*/
 }
