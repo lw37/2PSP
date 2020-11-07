@@ -1,7 +1,8 @@
 public class MailSender {
 
     public static void main(String[] args) {
-    System.out.println(args[4]+"MAILSENDER RUN");
+        System.out.println("MAILSENDER START");
+        System.out.println(args+"MAILSENDER RUN");
 
     }
 
