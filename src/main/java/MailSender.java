@@ -1,7 +1,11 @@
-public class MailSender implements Runnable {
-    private String lastUser;
-    private String user;
+public class MailSender {
 
+    public static void main(String[] args) {
+    System.out.println(args[4]+"MAILSENDER RUN");
+
+    }
+
+    /*
     public MailSender(String lastUser, String user)
     {
         this.lastUser = lastUser;

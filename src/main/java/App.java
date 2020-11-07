@@ -10,8 +10,9 @@ public class App {
         System.out.println("Aplicacion Started");
         Thread monitorLauncherThread = new Thread(new MonitorLauncher());
         Thread ceatorLauncherThread = new Thread(new CreatorLauncher());
-        monitorLauncherThread.start();
         ceatorLauncherThread.start();
+        monitorLauncherThread.start();
+
 
     }
     private static void MemberCreatorStart() throws IOException {
@@ -62,15 +63,3 @@ public class App {
         }
     }
 }
-
-       /* ProcessBuilder builder=new ProcessBuilder("java","-cp","C:\\Users\\luolu\\IdeaProjects\\2PSP\\out\\production\\2PSP","MenberMonitor");
-        Process lsProcess =builder.start();
-        InputStream processOut=lsProcess.getInputStream();
-        InputStreamReader isr=new InputStreamReader(processOut);
-        BufferedReader bis=new BufferedReader(isr);
-
-        String line;
-        while ((line=bis.readLine())!=null){
-            System.out.println(line);
-        }
-*/
