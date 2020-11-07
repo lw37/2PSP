@@ -1,6 +1,5 @@
 import java.io.*;
 import java.util.ArrayList;
-import java.util.TreeMap;
 
 public class MemberMonitor {
 
@@ -57,7 +56,7 @@ public class MemberMonitor {
         }
 
         @Override
-        public  void run() {
+        public synchronized void run() {
             try {
                 System.out.println("MailSenderLauncher run");
                 MailSenderStart(lastUser);

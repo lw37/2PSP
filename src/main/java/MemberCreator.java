@@ -6,6 +6,7 @@ import java.io.PrintWriter;
 
 public class MemberCreator {
     public static void main(String[] args) {
+        System.out.println("Creator Started");
         File file = new File("correos.txt");
         FileWriter writer = null;
         try {
