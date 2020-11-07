@@ -1,14 +1,28 @@
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
+public class MailSender implements Runnable {
+    private String lastUser;
+    private String user;
 
-public class MailSender implements Runnable{
+    public MailSender(String lastUser, String user)
+    {
+        this.lastUser = lastUser;
+        this.user = user;
+    }
 
+    @Override
+    public void run() {
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println("Estimado "+user+", usuario "+lastUser+" ha unido a nuestro grupo.");
+    }
+/*
     private final MemberCreator member;
     private int longitud;
     public MailSender(MemberCreator member){
         this.member=member;
     }
-    Lock lock=new ReentrantLock();
     @Override
     public  void run() {
         System.out.println("MailSender Started");
@@ -19,7 +33,6 @@ public class MailSender implements Runnable{
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            lock.lock();
             for (int i = 0; i < this.member.Correo().size() ; i++) {
                 try {
                     Thread.sleep(500);
@@ -30,8 +43,7 @@ public class MailSender implements Runnable{
                     this.member.Informar(i);
                 }
             }
-            lock.unlock();
         }
     }
-
+*/
 }
