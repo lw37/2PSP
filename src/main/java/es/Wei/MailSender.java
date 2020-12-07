@@ -1,35 +1,33 @@
 package es.Wei;
+
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
+import java.text.MessageFormat;
 
 public class MailSender implements Runnable {
-    public static ExecutorService executorService= Executors.newFixedThreadPool(20);
     String lastUser;
-    MailSender(String lastUser){
-        this.lastUser=lastUser;
+
+    MailSender(String lastUser) {
+        this.lastUser = lastUser;
     }
+
     @Override
     public void run() {
         try {
-            FileReader   reader = new FileReader("correos.txt");
+            FileReader reader = new FileReader("correos.txt");
             BufferedReader bReader = new BufferedReader(reader);
             String user;
-            while (true) {
-                try {
-                    if (((user = bReader.readLine()) != null)) {
-                        executorService.execute(new Enviar(user, lastUser));
-                 }
-
+            Thread.sleep(1000);
+            try {
+                while(((user = bReader.readLine()) != null)) {
+                    System.out.println(MessageFormat.format("Estimado usuario:{0} usario:{1} se ha unido a nuestro grupo.", user, lastUser));
+                }
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        }
-        } catch (FileNotFoundException e) {
+        } catch (FileNotFoundException | InterruptedException e) {
             e.printStackTrace();
         }
     }
