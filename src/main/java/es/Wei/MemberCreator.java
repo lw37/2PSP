@@ -16,15 +16,15 @@ public class MemberCreator implements Runnable {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        int i=0;
+        int i = 0;
         PrintWriter printer = new PrintWriter(writer);
-        while(true){
+        while (true) {
             i++;
             printer.println(i + "@qq.com");
             printer.flush();
             System.out.println("Creado user: " + i + "@qq.com");
             try {
-                Thread.sleep(4000);
+                Thread.sleep(5000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
