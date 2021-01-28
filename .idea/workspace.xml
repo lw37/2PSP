@@ -24,21 +24,6 @@
   <component name="ChangeListManager">
     <list default="true" id="619fea80-b0d2-4518-9e0b-ea460dbcce32" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DronController/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/DronController/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DronController/src/main/java/es/florida/DronController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DronController/src/main/java/es/florida/DronController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DronController/target/DronControl-1.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DronController/target/classes/es/florida/DronController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DronController/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DronController/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DronController/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DronController/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/wei/Servidor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/wei/Servidor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
