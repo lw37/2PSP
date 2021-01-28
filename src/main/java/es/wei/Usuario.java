@@ -10,7 +10,6 @@ public class Usuario {
     public static void main(String[] args) throws IOException {
         Socket socket = new Socket();
         socket.connect(new InetSocketAddress("localhost", PORT_HTTP));
-
         Thread ThreadComandos = new Thread(new Comandos(socket));
         ThreadComandos.start();
     }
