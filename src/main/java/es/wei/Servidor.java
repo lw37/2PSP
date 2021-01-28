@@ -39,6 +39,8 @@ public class Servidor {
                 recibido = bReader.readLine();
                 printer.println("Recibido comando correctamente  :" + recibido);
                 System.out.println("Recibido comando correctamente  :" + recibido);
+                printer.close();
+                usuario.close();
 
             } catch (IOException e) {
                 e.printStackTrace();

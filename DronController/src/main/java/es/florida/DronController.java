@@ -1,5 +1,9 @@
 package es.florida;
 
+import org.jasypt.util.password.BasicPasswordEncryptor;
+import org.jasypt.util.password.PasswordEncryptor;
+import org.jasypt.util.text.AES256TextEncryptor;
+
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
@@ -50,7 +54,10 @@ public class DronController {
     public void shutDown(Socket socket) throws IOException {
         OutputStream outputStream = socket.getOutputStream();
         PrintWriter printer = new PrintWriter(new OutputStreamWriter(outputStream), true);
-        printer.println("OFF");
+        AES256TextEncryptor encryptor = new AES256TextEncryptor();
+        String secreto="OFF";
+        String encriptado= encryptor.encrypt(secreto);
+        printer.println(encriptado);
         System.out.println("Shutting down system...");
     }
 
